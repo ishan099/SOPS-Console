@@ -87,3 +87,16 @@ D:\MyStuff\ICBT\Final Project\SOPS\SCMC_Console\SmartOrderPlacingtSystem\EmailCo
 D:\MyStuff\ICBT\Final Project\SOPS\SCMC_Console\SmartOrderPlacingtSystem\EmailCommunicator\obj\x86\Debug\EmailCommunicator.Form1.resources
 D:\MyStuff\ICBT\Final Project\SOPS\SCMC_Console\SmartOrderPlacingtSystem\EmailCommunicator\obj\x86\Debug\EmailCommunicator.Properties.Resources.resources
 D:\MyStuff\ICBT\Final Project\SOPS\SCMC_Console\SmartOrderPlacingtSystem\EmailCommunicator\obj\x86\Debug\AI_Agent.csproj.GenerateResource.Cache
+D:\MyStuff\ICBT\Final Project\SOPS\GIT HUB\SOPS-Console\EmailCommunicator\bin\Debug\EmailCommunicator.exe.config
+D:\MyStuff\ICBT\Final Project\SOPS\GIT HUB\SOPS-Console\EmailCommunicator\obj\x86\Debug\EmailCommunicator.exe
+D:\MyStuff\ICBT\Final Project\SOPS\GIT HUB\SOPS-Console\EmailCommunicator\obj\x86\Debug\EmailCommunicator.pdb
+D:\MyStuff\ICBT\Final Project\SOPS\GIT HUB\SOPS-Console\EmailCommunicator\bin\Debug\EmailCommunicator.exe
+D:\MyStuff\ICBT\Final Project\SOPS\GIT HUB\SOPS-Console\EmailCommunicator\bin\Debug\EmailCommunicator.pdb
+D:\MyStuff\ICBT\Final Project\SOPS\GIT HUB\SOPS-Console\EmailCommunicator\bin\Debug\Facebook.dll
+D:\MyStuff\ICBT\Final Project\SOPS\GIT HUB\SOPS-Console\EmailCommunicator\bin\Debug\Newtonsoft.Json.dll
+D:\MyStuff\ICBT\Final Project\SOPS\GIT HUB\SOPS-Console\EmailCommunicator\bin\Debug\Facebook.xml
+D:\MyStuff\ICBT\Final Project\SOPS\GIT HUB\SOPS-Console\EmailCommunicator\bin\Debug\Newtonsoft.Json.xml
+D:\MyStuff\ICBT\Final Project\SOPS\GIT HUB\SOPS-Console\EmailCommunicator\obj\x86\Debug\AI_Agent.csprojResolveAssemblyReference.cache
+D:\MyStuff\ICBT\Final Project\SOPS\GIT HUB\SOPS-Console\EmailCommunicator\obj\x86\Debug\EmailCommunicator.Form1.resources
+D:\MyStuff\ICBT\Final Project\SOPS\GIT HUB\SOPS-Console\EmailCommunicator\obj\x86\Debug\EmailCommunicator.Properties.Resources.resources
+D:\MyStuff\ICBT\Final Project\SOPS\GIT HUB\SOPS-Console\EmailCommunicator\obj\x86\Debug\AI_Agent.csproj.GenerateResource.Cache

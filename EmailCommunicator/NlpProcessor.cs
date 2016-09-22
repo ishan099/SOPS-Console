@@ -49,7 +49,7 @@ namespace EmailCommunicator
                             foreach (KeyValuePair<string, String> data in data3)
                             {
                                 dataAccess.SaveMailDetails(Convert.ToInt32(row["ID"].ToString()), data.Key.ToString(), data.Value.ToString());
-                                Console.WriteLine("tokens got saved to DB");
+                                Console.WriteLine("Order got saved to DB");
                             }
 
                             //Search  existing customer for email

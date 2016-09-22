@@ -81,9 +81,9 @@ namespace EmailCommunicator
 
 
 
-        /// <summary>
+ 
         ///create and open the SQL Conection
-        /// </summary>
+
         public void openConn()
         {
             try

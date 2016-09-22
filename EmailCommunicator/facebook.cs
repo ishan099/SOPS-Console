@@ -28,7 +28,7 @@ namespace EmailCommunicator
         {
 
             Console.WriteLine("Receiving Started");
-            string facebookToken = "EAACEdEose0cBAHK8ObxHpyH0kQadsqVbXTCAiNpHyUlRWbPupJMBIX5QHTZA4vwLzVkPGCPsVdP5rzIGwjFgSTcfvefZCfHo73Fc6bi6OBeGCOZCKwwl63ND3oHkjZCFM1gG1tIch4sZBsxPaic9DEZBvD6jKZBTZCgLtGPSLJfgWPh4SaWTXNrU";
+            string facebookToken = "EAACEdEose0cBALo8TktxvSJcIpQgKzDZAqNYZBcPByZBoKbv9ZAeZCfDLJWLezOTfAZAL3FimmKFZAUmlBEv3sRAyOYZA8buN3IC3mHoRmuPgJkhT32BVlnpaUsyTKhHnBvXqTGpKnPBPTnNXnixoPH99WBo5o7j6mVKsSFMgGajNQZDZD";
             var client = new FacebookClient(facebookToken);
 
             try

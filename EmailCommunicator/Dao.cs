@@ -253,9 +253,11 @@ namespace EmailCommunicator
 
                try
                {
+
+                   String msg1 = "%" + mgs + "%";
                    string sql = "";
                    DataSet dt;
-                     sql = "SELECT ItemCode, ItemName, UOM, UnitPrice, SellingPrice FROM CIA_ItemMaster WHERE  ItemName ='"+ mgs +"'";
+                   sql = "SELECT ItemCode, ItemName, UOM, UnitPrice, SellingPrice FROM CIA_ItemMaster WHERE  ItemName like '" + msg1 + "'";
                    String sql1 = sql.Replace("'", "");
                    dt = getDataset(sql);
                    return dt.Tables[0];

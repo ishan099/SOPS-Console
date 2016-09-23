@@ -10,7 +10,7 @@ namespace EmailCommunicator
     class Dao : Dal
     {
 
-        public void SaveMsg(String sender, String Msg_id, String body)
+        public void SaveMsg(String sender, String Msg_id, String body,String name)
         {
 
             try
@@ -22,7 +22,7 @@ namespace EmailCommunicator
 
 
                 str = "SELECT *  FROM  FB_MessageReceived WHERE   (Msg_id = '" + Msg_id + "')";
-                sql = "INSERT INTO FB_MessageReceived  (Sender, Msg_id, Message, Status)  VALUES     ('" + sender + "', '" + Msg_id + "', '" + NewBody + "' ,1)";
+                sql = "INSERT INTO FB_MessageReceived  (Sender, Msg_id, Message, Status,RepliedDate)  VALUES     ('" + sender + "', '" + Msg_id + "', '" + NewBody + "' ,1, '" +name+ "')";
                 dt = getDataset(str);
 
                 if (dt.Tables[0].Rows.Count == 0)
@@ -75,6 +75,34 @@ namespace EmailCommunicator
                          " FROM         FB_MessageReceived INNER JOIN " +
                          " CIA_Interaction ON FB_MessageReceived.ID = CIA_Interaction.EmailReferance " +
                          " WHERE     (FB_MessageReceived.IsReplied = 0 )";
+                   dt = getDataset(sql);
+                   return dt.Tables[0];
+               }
+               catch (Exception ex)
+               {
+                   throw ex;
+               }
+
+           }
+           catch (Exception ex)
+           {
+               throw ex;
+           }
+       }
+
+
+
+       public DataTable GetOrdersForReplay()
+       {
+
+           try
+           {
+
+               try
+               {
+                   string sql = "";
+                   DataSet dt;
+                   sql = "SELECT       id, Sender, Msg_id, Message, ReceivedDate, RepliedDate, Status, IsReplied, IsProcessed, IsResolved,RepliedDate FROM FB_MessageReceived WHERE        (Status = 3) and (IsReplied=0)";
                    dt = getDataset(sql);
                    return dt.Tables[0];
                }
@@ -359,6 +387,22 @@ namespace EmailCommunicator
            {
                string sql = "";
                sql = "UPDATE     FB_MessageReceived SET  IsResolved   =1 where iD ='" + id + "' ";
+               exeNonQury(sql);
+           }
+           catch (Exception ex)
+           {
+               throw ex;
+           }
+       }
+
+
+       public void UpdatePostStatus(int id)
+       {
+
+           try
+           {
+               string sql = "";
+               sql = "UPDATE     FB_MessageReceived SET  IsReplied   =1 where iD ='" + id + "' ";
                exeNonQury(sql);
            }
            catch (Exception ex)

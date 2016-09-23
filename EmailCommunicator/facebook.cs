@@ -28,7 +28,7 @@ namespace EmailCommunicator
         {
 
             Console.WriteLine("Receiving Started");
-            string facebookToken = "EAACEdEose0cBAAo7dOdTkWOJrEi2JqkkZAUCHcZCNmqQpdaC5x2CYND2o5Ad7Y2kb1rvcV087nReCJN3qS1ZBJm6fXmM8757BnQWbZCXZAy8ovbcYLNcJ4cOVgff3hspcEOfaAizDJisXZCppi6nRIRzVYCZCgBOEdSDI62i9dq9AZDZD";
+            string facebookToken = "EAACEdEose0cBAFsZA4vmJAoXRibBV2nXDAWAZCqYezMlfZCYZClmUrnk36waolpg3Tpwllsls8OPzRUCE8ErcgciJoN11y5x8GqG7dZC9vHbZA2yxY7ezEjZB2IWnh37R1o3C1CtliEyy7mhTVdPlbOxfKBZBkJ6SGv7SDQrAAozXQZDZD";
             var client = new FacebookClient(facebookToken);
 
             try
@@ -41,7 +41,7 @@ namespace EmailCommunicator
                 foreach (dynamic item in me.data)
                 {
 
-                    var name = item[2][0];
+                    var name = item.id;
 
 
                     foreach (var it in item.messages.data)
@@ -59,13 +59,38 @@ namespace EmailCommunicator
 
                         //save fb message to DB
                         dataAccess = new Dao();
-                        dataAccess.SaveMsg(custName, custId, fbMsg);
+                        if (custName != "Smart Order Placing System")
+                        {
+                        dataAccess.SaveMsg(custName, custId, fbMsg,name);
+                        }
 
 
                         // Replay to the customer 
 
 
                        // dynamic reply = client.Post(item.id + "/messages", new { message = "Test Message from app" });
+
+                        // send post to FB
+                        DataTable dt = null; 
+
+                      dt=   dataAccess.GetOrdersForReplay();
+
+                      if (dt.Rows.Count > 0)
+                      {
+                          int oid = Convert.ToInt32(dt.Rows[0]["ID"].ToString());
+                          String sender = dt.Rows[0]["RepliedDate"].ToString();
+                          dynamic reply = client.Post(sender + "/messages", new { message = "You order is ready and order number is " + oid });
+
+                          //update status of msg
+
+                          dataAccess.UpdatePostStatus(oid);
+
+
+                      }
+
+
+
+                        
 
 
 

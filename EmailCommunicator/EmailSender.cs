@@ -11,7 +11,7 @@ using System.Data;
 
 
 
-namespace EmailCommunicator
+namespace FBCommunicator
 {
   public  class EmailSender
     {
@@ -23,10 +23,10 @@ namespace EmailCommunicator
             try
                 {
                     
-                     DataTable dt;
+                     DataTable dt= new DataTable();
                      dataAccess = new Dao();
                      string  intractionID = "";
-                     dt = dataAccess.GetMailDetailsToReply();
+                    // dt = dataAccess.GetMailDetailsToReply();
 
                 if (dt.Rows.Count >0)
                 {
@@ -60,7 +60,7 @@ namespace EmailCommunicator
                 DataTable dt;
                 dataAccess = new Dao();
                 string intractionID = "";
-                String agentComment ="";
+                String agentComment = "";
                 dt = dataAccess.GetMailDetailsToFinalReply();
 
                 if (dt.Rows.Count > 0)
@@ -69,9 +69,9 @@ namespace EmailCommunicator
                     {
                         Console.WriteLine("Start Sending Final Replay");
                         intractionID = (row["InteractionID"].ToString());
-                        agentComment =(row["AgentRemark"].ToString());
+                        agentComment = (row["AgentRemark"].ToString());
                         Console.WriteLine(row["Sender"].ToString());
-                        MailMessage(row["Sender"].ToString(), "C & X Customere Care", "We have closed the ticket number : " + intractionID +". Agent Comment is : " + agentComment + " .Thanks You....");
+                        MailMessage(row["Sender"].ToString(), "C & X Customere Care", "We have closed the ticket number : " + intractionID + ". Agent Comment is : " + agentComment + " .Thanks You....");
                         dataAccess.UpdateStatusOfFinalMail(Convert.ToInt16(row["ID"].ToString()));
                         Console.WriteLine(" Final Mail Sending complated and saved to the DB");
                     }

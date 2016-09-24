@@ -8,7 +8,7 @@ using log4net;
 
 [assembly: log4net.Config.XmlConfigurator(Watch = true)]
 
-namespace EmailCommunicator
+namespace FBCommunicator
 {
     class DataProcessor
     {
@@ -39,12 +39,12 @@ namespace EmailCommunicator
                    // NLP nlpCls = new NLP();
                     EmailSender sendMail = new EmailSender();
                     NlpProcessor mailProcess = new NlpProcessor();
-                    actionLog.Info("Receiving Mail Strated");
+                 //   actionLog.Info("Receiving  Strated");
                //     email.ReceiveMails();
-                    actionLog.Info("Processing Mails Started");
+                  //  actionLog.Info("Processing Mails Started");
                     mailProcess.processData();
-                    actionLog.Info("Send aknoledge mail started");
-                    sendMail.ComposeFinalEmail();
+                 //   actionLog.Info("Send aknoledge mail started");
+                   // sendMail.ComposeFinalEmail();
                     actionLog.Info("Send Slection and Assignment started");
                     mailProcess.SelectionAndAssignProcess();
                     sendMail.ComposeDefaultEmail();

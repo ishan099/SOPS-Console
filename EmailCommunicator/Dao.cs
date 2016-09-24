@@ -5,7 +5,7 @@ using System.Text;
 using System.Data;
 using System.Data.SqlTypes;
 using System.Data.SqlClient;
-namespace EmailCommunicator
+namespace FBCommunicator
 {
     class Dao : Dal
     {
@@ -37,7 +37,7 @@ namespace EmailCommunicator
                 throw ex;
             }
         }
-        // Save email message Details to the DB
+        // Save  message Details to the DB
        public void SaveMail(String sender , String subject , String body)
        {
 
@@ -59,36 +59,36 @@ namespace EmailCommunicator
 
 
        //// Get email message Details to the DB
-       public DataTable GetMailDetailsToReply()
-       {
+       //public DataTable GetMailDetailsToReply()
+       //{
 
-           try
-           {
+       //    try
+       //    {
 
-               try
-               {
-                   string sql = "";
-                   DataSet dt;
-                   sql = "SELECT     FB_MessageReceived.ID, FB_MessageReceived.Sender, FB_MessageReceived.Subject, FB_MessageReceived.Message, FB_MessageReceived.ReceivedDate, " +
-                         " FB_MessageReceived.RepliedDate, FB_MessageReceived.Status, FB_MessageReceived.IsReplied, FB_MessageReceived.IsProcessed, FB_MessageReceived.IsResolved," +
-                         " CIA_Interaction.InteractionID " +
-                         " FROM         FB_MessageReceived INNER JOIN " +
-                         " CIA_Interaction ON FB_MessageReceived.ID = CIA_Interaction.EmailReferance " +
-                         " WHERE     (FB_MessageReceived.IsReplied = 0 )";
-                   dt = getDataset(sql);
-                   return dt.Tables[0];
-               }
-               catch (Exception ex)
-               {
-                   throw ex;
-               }
+       //        try
+       //        {
+       //            string sql = "";
+       //            DataSet dt;
+       //            sql = "SELECT     FB_MessageReceived.ID, FB_MessageReceived.Sender, FB_MessageReceived.Subject, FB_MessageReceived.Message, FB_MessageReceived.ReceivedDate, " +
+       //                  " FB_MessageReceived.RepliedDate, FB_MessageReceived.Status, FB_MessageReceived.IsReplied, FB_MessageReceived.IsProcessed, FB_MessageReceived.IsResolved," +
+       //                  " CIA_Interaction.InteractionID " +
+       //                  " FROM         FB_MessageReceived INNER JOIN " +
+       //                  " CIA_Interaction ON FB_MessageReceived.ID = CIA_Interaction.EmailReferance " +
+       //                  " WHERE     (FB_MessageReceived.IsReplied = 0 )";
+       //            dt = getDataset(sql);
+       //            return dt.Tables[0];
+       //        }
+       //        catch (Exception ex)
+       //        {
+       //            throw ex;
+       //        }
 
-           }
-           catch (Exception ex)
-           {
-               throw ex;
-           }
-       }
+       //    }
+       //    catch (Exception ex)
+       //    {
+       //        throw ex;
+       //    }
+       //}
 
 
 
@@ -461,37 +461,37 @@ namespace EmailCommunicator
        }
 
 
-       public DataTable GetCategoryAndGroupDetaile()
-       {
+       //public DataTable GetCategoryAndGroupDetaile()
+       //{
 
-           try
-           {
+       //    try
+       //    {
 
-               try
-               {
-                   string sql = "";
-                   DataSet dt;
-                     sql = " SELECT     CIA_InteractionType.InteractionType, CIA_InteractionType.InteractionTypeID, CIA_Type.TypeID, CIA_Type.Type, CIA_Category.CatID, CIA_Category.Category, CIA_SubCategory.SubCatID, " +
-                      " CIA_SubCategory.SubCategory, CIA_SubCategory.AssignedGroup, CIA_SubCategory.IsActive "+
-                       " FROM         CIA_Type INNER JOIN " +
-                      " CIA_InteractionType ON CIA_Type.InteractionTypeID = CIA_InteractionType.InteractionTypeID INNER JOIN " +
-                      " CIA_Category ON CIA_Type.TypeID = CIA_Category.TypeID INNER JOIN " +
-                      " CIA_SubCategory ON CIA_Category.CatID = CIA_SubCategory.CatID " +
-                      " WHERE     (CIA_SubCategory.IsActive = 1)";
-                   dt = getDataset(sql);
-                   return dt.Tables[0];
-               }
-               catch (Exception ex)
-               {
-                   throw ex;
-               }
+       //        try
+       //        {
+       //            string sql = "";
+       //            DataSet dt;
+       //              sql = " SELECT     CIA_InteractionType.InteractionType, CIA_InteractionType.InteractionTypeID, CIA_Type.TypeID, CIA_Type.Type, CIA_Category.CatID, CIA_Category.Category, CIA_SubCategory.SubCatID, " +
+       //               " CIA_SubCategory.SubCategory, CIA_SubCategory.AssignedGroup, CIA_SubCategory.IsActive "+
+       //                " FROM         CIA_Type INNER JOIN " +
+       //               " CIA_InteractionType ON CIA_Type.InteractionTypeID = CIA_InteractionType.InteractionTypeID INNER JOIN " +
+       //               " CIA_Category ON CIA_Type.TypeID = CIA_Category.TypeID INNER JOIN " +
+       //               " CIA_SubCategory ON CIA_Category.CatID = CIA_SubCategory.CatID " +
+       //               " WHERE     (CIA_SubCategory.IsActive = 1)";
+       //            dt = getDataset(sql);
+       //            return dt.Tables[0];
+       //        }
+       //        catch (Exception ex)
+       //        {
+       //            throw ex;
+       //        }
 
-           }
-           catch (Exception ex)
-           {
-               throw ex;
-           }
-       }
+       //    }
+       //    catch (Exception ex)
+       //    {
+       //        throw ex;
+       //    }
+       //}
 
 
        public Boolean InserIntraction(Int32 intractionID, int cusType, int cusID, int type, int mainCat, int cat, int subCat, String remarks, String phoneNum, int cUser, String status, int modifiedUser, int assignGrp, int assignUser, String email, int emailRef)

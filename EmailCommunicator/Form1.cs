@@ -11,7 +11,7 @@ using System.Text;
 using System.IO;
 using EAGetMail;
 
-namespace EmailCommunicator
+namespace FBCommunicator
 {
     public partial class Form1 : Form
     {

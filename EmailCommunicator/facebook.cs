@@ -13,7 +13,7 @@ using Newtonsoft.Json;
 
 
 
-namespace EmailCommunicator
+namespace FBCommunicator
 {
     class facebook
     {
@@ -28,7 +28,7 @@ namespace EmailCommunicator
         {
 
             Console.WriteLine("Receiving Started");
-            string facebookToken = "EAACEdEose0cBAFsZA4vmJAoXRibBV2nXDAWAZCqYezMlfZCYZClmUrnk36waolpg3Tpwllsls8OPzRUCE8ErcgciJoN11y5x8GqG7dZC9vHbZA2yxY7ezEjZB2IWnh37R1o3C1CtliEyy7mhTVdPlbOxfKBZBkJ6SGv7SDQrAAozXQZDZD";
+            string facebookToken = "EAACEdEose0cBAKF46d78mbKqw7yEPeSnbutbqCZCYgyPIqZC8DaxSpeIVXbRyOlqHXt251UtK065fpuPSvcrH5ZCoVgEPSKoTAv0oocOr59lcmMLPXGnaeZBF2sUq8ki3XKDUKDaunQkxhs04Nv8TgpgZBhwHCiOA4UU7ZBXGry2gcRsYOvrjb";
             var client = new FacebookClient(facebookToken);
 
             try

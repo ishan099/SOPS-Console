@@ -1,4 +1,4 @@
-﻿namespace EmailCommunicator
+﻿namespace FBCommunicator
 {
     partial class Form1
     {

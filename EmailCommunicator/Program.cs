@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 
 
-namespace EmailCommunicator
+namespace FBCommunicator
 {
    static  class Program
     {

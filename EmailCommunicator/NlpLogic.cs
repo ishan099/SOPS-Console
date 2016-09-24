@@ -5,7 +5,7 @@ using System.Text;
 using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace EmailCommunicator
+namespace FBCommunicator
 {
     public class NlpLogic
     {

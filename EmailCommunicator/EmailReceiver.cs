@@ -12,7 +12,7 @@ using System.IO;
 using EAGetMail;
 using System.ServiceProcess;
 
-namespace EmailCommunicator
+namespace FBCommunicator
 {
     class EmailReceiver
     {

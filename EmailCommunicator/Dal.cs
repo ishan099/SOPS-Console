@@ -7,7 +7,7 @@ using System.Configuration;
 using System.Data;
 using Microsoft.Win32;
 
-namespace EmailCommunicator
+namespace FBCommunicator
 {
     public abstract class Dal
     {

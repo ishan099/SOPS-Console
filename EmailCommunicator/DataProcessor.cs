@@ -35,17 +35,12 @@ namespace FBCommunicator
                 {
                     facebook fb = new facebook();
                    fb.GetFBMsg();
-                    EmailReceiver email = new EmailReceiver();
-                   // NLP nlpCls = new NLP();
+                   
                     EmailSender sendMail = new EmailSender();
-                    NlpProcessor mailProcess = new NlpProcessor();
-                 //   actionLog.Info("Receiving  Strated");
-               //     email.ReceiveMails();
+                    NlpProcessor mailProcess = new NlpProcessor();            
                   //  actionLog.Info("Processing Mails Started");
-                    mailProcess.processData();
-                 //   actionLog.Info("Send aknoledge mail started");
-                   // sendMail.ComposeFinalEmail();
-                    actionLog.Info("Send Slection and Assignment started");
+                    mailProcess.processData();            
+                    //actionLog.Info("Send Slection started");
                     mailProcess.SelectionAndAssignProcess();
                     sendMail.ComposeDefaultEmail();
                     

@@ -28,7 +28,7 @@ namespace FBCommunicator
         {
 
             Console.WriteLine("Receiving Started");
-            string facebookToken = "EAACEdEose0cBAKF46d78mbKqw7yEPeSnbutbqCZCYgyPIqZC8DaxSpeIVXbRyOlqHXt251UtK065fpuPSvcrH5ZCoVgEPSKoTAv0oocOr59lcmMLPXGnaeZBF2sUq8ki3XKDUKDaunQkxhs04Nv8TgpgZBhwHCiOA4UU7ZBXGry2gcRsYOvrjb";
+            string facebookToken = "EAACEdEose0cBAF5lVBljuVB7h6ZBWogu21i2Ke6jDZCUsjGuZAh9H798AZCCKaYdQK9STUTgmBbgcMxXj07kZBaCEFiC2ZCnxiK9bjjaTwRrUNw4boLBGjJyY6FR2X9eqm1bkwJvgaLiK5PJVRa9uQDhFUhzeqRVcWsMZC8Ji9JRMHRcuftu8CA";
             var client = new FacebookClient(facebookToken);
 
             try
@@ -36,8 +36,7 @@ namespace FBCommunicator
 
             
             dynamic me = client.Get("me/conversations?fields=messages", null);
-
-          
+         
                 foreach (dynamic item in me.data)
                 {
 
@@ -52,10 +51,7 @@ namespace FBCommunicator
                         custName = val.from.name; ;
                         custId = val.id;
 
-
-
                         Console.WriteLine("From: {0}", fbMsg.ToString());
-
 
                         //save fb message to DB
                         dataAccess = new Dao();
@@ -66,9 +62,6 @@ namespace FBCommunicator
 
 
                         // Replay to the customer 
-
-
-                       // dynamic reply = client.Post(item.id + "/messages", new { message = "Test Message from app" });
 
                         // send post to FB
                         DataTable dt = null; 
@@ -82,7 +75,6 @@ namespace FBCommunicator
                           dynamic reply = client.Post(sender + "/messages", new { message = "You order is ready and order number is " + oid });
 
                           //update status of msg
-
                           dataAccess.UpdatePostStatus(oid);
 
 

@@ -18,8 +18,7 @@ namespace FBCommunicator
         private int mConnectionTimeOut = 0;
         private string dataSource = "";
         public string ConnStr = "";
-        //private RegistryKey mykey = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Duo\\Activations");
-        // ConnStr =  "data source = LocalHost;initial catalog = CBNDB;integrated security=SSPI";
+
 
 
         private SqlTransaction dbTran;
@@ -167,15 +166,7 @@ namespace FBCommunicator
 
 
 
-        /// <summary>
-        /// This will return a the Next Transaction No
-        ///	Without updating the m_masterData Table
-        /// </summary>
-        /// <param name="fldCode"></param>
-        /// <param name="comID"></param>
-        /// <param name="locID"></param>
-        /// <param name="braID"></param>
-        /// <returns></returns>
+
 
 
 
@@ -265,28 +256,7 @@ namespace FBCommunicator
 
         }
 
-        public void callSp(string spName, SqlParameter[] paraList)
-        {
-            try
-            {
-                /*if (dbTran==null)							
-                    SqlHelper.ExecuteNonQuery(dbCon, CommandType.StoredProcedure, spName, paraList);
-                else
-                    SqlHelper.ExecuteNonQuery(dbTran, CommandType.StoredProcedure, spName, paraList);	
-            */
 
-                SqlCommand cmd = newCommand(spName, CommandType.StoredProcedure);
-                foreach (SqlParameter sqlpara in paraList)
-                {
-                    cmd.Parameters.Add(sqlpara.ParameterName, sqlpara.Value);
-                }
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
 
 
         /// <summary>

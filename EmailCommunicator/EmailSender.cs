@@ -51,40 +51,40 @@ namespace FBCommunicator
         }
 
 
-        public void ComposeFinalEmail()
-        {
+        //public void ComposeFinalEmail()
+        //{
 
-            try
-            {
+        //    try
+        //    {
 
-                DataTable dt;
-                dataAccess = new Dao();
-                string intractionID = "";
-                String agentComment = "";
-                dt = dataAccess.GetMailDetailsToFinalReply();
+        //        DataTable dt;
+        //        dataAccess = new Dao();
+        //        string intractionID = "";
+        //        String agentComment = "";
+        //        dt = dataAccess.GetMailDetailsToFinalReply();
 
-                if (dt.Rows.Count > 0)
-                {
-                    foreach (DataRow row in dt.Rows)
-                    {
-                        Console.WriteLine("Start Sending Final Replay");
-                        intractionID = (row["InteractionID"].ToString());
-                        agentComment = (row["AgentRemark"].ToString());
-                        Console.WriteLine(row["Sender"].ToString());
-                        MailMessage(row["Sender"].ToString(), "C & X Customere Care", "We have closed the ticket number : " + intractionID + ". Agent Comment is : " + agentComment + " .Thanks You....");
-                        dataAccess.UpdateStatusOfFinalMail(Convert.ToInt16(row["ID"].ToString()));
-                        Console.WriteLine(" Final Mail Sending complated and saved to the DB");
-                    }
-                }
+        //        if (dt.Rows.Count > 0)
+        //        {
+        //            foreach (DataRow row in dt.Rows)
+        //            {
+        //                Console.WriteLine("Start Sending Final Replay");
+        //                intractionID = (row["InteractionID"].ToString());
+        //                agentComment = (row["AgentRemark"].ToString());
+        //                Console.WriteLine(row["Sender"].ToString());
+        //                MailMessage(row["Sender"].ToString(), "C & X Customere Care", "We have closed the ticket number : " + intractionID + ". Agent Comment is : " + agentComment + " .Thanks You....");
+        //                dataAccess.UpdateStatusOfFinalMail(Convert.ToInt16(row["ID"].ToString()));
+        //                Console.WriteLine(" Final Mail Sending complated and saved to the DB");
+        //            }
+        //        }
 
 
 
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message.ToString());
-            }
-        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message.ToString());
+        //    }
+        //}
         
         //To create mail meaasge 
         public void MailMessage( String toAddr,String subject,string body)
